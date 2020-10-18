@@ -33,13 +33,13 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `You have pushed the button this many times: {value}`
-  String button_pushed_count(Object value) {
+  /// `Weatherly`
+  String get app_name {
     return Intl.message(
-      'You have pushed the button this many times: $value',
-      name: 'button_pushed_count',
+      'Weatherly',
+      name: 'app_name',
       desc: '',
-      args: [value],
+      args: [],
     );
   }
 }

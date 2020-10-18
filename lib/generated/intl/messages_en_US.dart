@@ -19,10 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en_US';
 
-  static m0(value) => "You have pushed the button this many times: ${value}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "button_pushed_count" : m0
+    "app_name" : MessageLookupByLibrary.simpleMessage("Weatherly")
   };
 }
