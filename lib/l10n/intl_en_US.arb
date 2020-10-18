@@ -1,0 +1,4 @@
+{
+  "@@locale": "en_US",
+  "button_pushed_count": "You have pushed the button this many times: {value}"
+}
