@@ -21,6 +21,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "app_name" : MessageLookupByLibrary.simpleMessage("Weatherly")
+    "app_name" : MessageLookupByLibrary.simpleMessage("Weatherly"),
+    "enable" : MessageLookupByLibrary.simpleMessage("Włącz"),
+    "enable_location" : MessageLookupByLibrary.simpleMessage("Włącz usługi GPS"),
+    "enable_location_desc" : MessageLookupByLibrary.simpleMessage("Proszę włączyć usługi GPS. Bez nich aplikacja nie będzie działać poprawnie."),
+    "enable_permission" : MessageLookupByLibrary.simpleMessage("Proszę pozwolić na dostęp do lokalizacji urządzenia oraz o włączenie usług GPS. Bez tego aplikacja nie będzie działać poprawnie."),
+    "location_info_title" : MessageLookupByLibrary.simpleMessage("Informacja o lokalizacji"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia")
   };
 }

@@ -5,6 +5,7 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:weatherly_flutter/data/model/all_weather.dart';
 import 'package:weatherly_flutter/domain/weather/weather_cubit.dart';
 import 'package:weatherly_flutter/domain/weather/weather_state.dart';
+import 'package:weatherly_flutter/generated/l10n.dart';
 import 'package:weatherly_flutter/utils/app_colors.dart';
 
 class MainScreen extends StatefulWidget {
@@ -12,10 +13,24 @@ class MainScreen extends StatefulWidget {
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> with AfterLayoutMixin {
+class _MainScreenState extends State<MainScreen>
+    with AfterLayoutMixin, WidgetsBindingObserver {
+  AppLifecycleState previousState = AppLifecycleState.resumed;
+
   @override
   void afterFirstLayout(BuildContext context) {
+    WidgetsBinding.instance.addObserver(this);
     context.bloc<WeatherCubit>().requestData();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    debugPrint(state.toString());
+    if (state == AppLifecycleState.resumed &&
+        previousState == AppLifecycleState.paused) {
+      context.bloc<WeatherCubit>().requestData();
+    }
+    previousState = state;
   }
 
   @override
@@ -23,20 +38,63 @@ class _MainScreenState extends State<MainScreen> with AfterLayoutMixin {
     return PlatformScaffold(
       backgroundColor: kColorLightGrey,
       body: BlocConsumer<WeatherCubit, WeatherState>(
-        listener: (BuildContext context, state) {},
+        listener: (BuildContext context, state) async {
+          if (state == WeatherState.enableGps()) {
+            await _buildEnableGpsDialog();
+          }
+        },
+        buildWhen: (previous, current) => current != WeatherState.enableGps(),
         builder: (BuildContext context, state) {
           return state.when(
-              loading: () => _buildLoader(),
+              loading: _buildLoader,
               loaded: (AllWeather data) => Container(),
-              error: (String error) => _buildError(error));
+              error: (String error) => _buildError(error),
+              locationDenied: () =>
+                  _buildLocationDeniedInfo(S.of(context).enable_permission),
+              enableGps: () => Container());
         },
       ),
     );
   }
 
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
   Widget _buildLoader() {
     return Container(
       child: Center(child: PlatformCircularProgressIndicator()),
+    );
+  }
+
+  Widget _buildLocationDeniedInfo(String message) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(S.of(context).location_info_title,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: kColorBlack, fontSize: 22)),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              child: Text(message, textAlign: TextAlign.center),
+            ),
+            PlatformButton(
+                color: kColorPrimary,
+                child: Text(
+                  S.of(context).enable,
+                  style: TextStyle(color: kColorLightGrey),
+                ),
+                onPressed: () {
+                  context.bloc<WeatherCubit>().requestData();
+                })
+          ],
+        ),
+      ),
     );
   }
 
@@ -46,5 +104,24 @@ class _MainScreenState extends State<MainScreen> with AfterLayoutMixin {
         child: Text(error),
       ),
     );
+  }
+
+  Future _buildEnableGpsDialog() async {
+    await showPlatformDialog(barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) {
+          return PlatformAlertDialog(
+            title: Text(S.of(context).enable_location),
+            content: Text(S.of(context).enable_location_desc),
+            actions: <Widget>[
+              PlatformButton(
+                  child: Text(S.of(context).settings),
+                  onPressed: () async {
+                    Navigator.pop(context);
+                    await context.bloc<WeatherCubit>().openLocationSettings();
+                  })
+            ],
+          );
+        });
   }
 }

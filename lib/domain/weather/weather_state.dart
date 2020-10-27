@@ -8,4 +8,6 @@ abstract class WeatherState with _$WeatherState {
   const factory WeatherState.loading() = _WeatherLoading;
   const factory WeatherState.loaded(AllWeather weather) = _WeatherLoaded;
   const factory WeatherState.error(String message) = _WeatherError;
+  const factory WeatherState.locationDenied() = _WeatherLocationDenied;
+  const factory WeatherState.enableGps() = _WeatherEnableGps;
 }

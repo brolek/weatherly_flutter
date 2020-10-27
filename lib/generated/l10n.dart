@@ -9,6 +9,8 @@ import 'intl/messages_all.dart';
 // **************************************************************************
 
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values
 
 class S {
   S();
@@ -38,6 +40,66 @@ class S {
     return Intl.message(
       'Weatherly',
       name: 'app_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable location`
+  String get enable_location {
+    return Intl.message(
+      'Enable location',
+      name: 'enable_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable location. The application won't work properly without it.`
+  String get enable_location_desc {
+    return Intl.message(
+      'Please enable location. The application won\'t work properly without it.',
+      name: 'enable_location_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location Info`
+  String get location_info_title {
+    return Intl.message(
+      'Location Info',
+      name: 'location_info_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable`
+  String get enable {
+    return Intl.message(
+      'Enable',
+      name: 'enable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable location permissions and GPS. The application won't work properly without it.`
+  String get enable_permission {
+    return Intl.message(
+      'Please enable location permissions and GPS. The application won\'t work properly without it.',
+      name: 'enable_permission',
       desc: '',
       args: [],
     );

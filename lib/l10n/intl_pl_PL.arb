@@ -1,4 +1,10 @@
 {
   "@@locale": "pl_PL",
-  "app_name": "Weatherly"
+  "app_name": "Weatherly",
+  "enable_location": "Włącz usługi GPS",
+  "enable_location_desc": "Proszę włączyć usługi GPS. Bez nich aplikacja nie będzie działać poprawnie.",
+  "settings": "Ustawienia",
+  "location_info_title": "Informacja o lokalizacji",
+  "enable": "Włącz",
+  "enable_permission": "Proszę pozwolić na dostęp do lokalizacji urządzenia oraz o włączenie usług GPS. Bez tego aplikacja nie będzie działać poprawnie."
 }

@@ -1,4 +1,10 @@
 {
   "@@locale": "en_US",
-  "app_name": "Weatherly"
+  "app_name": "Weatherly",
+  "enable_location": "Enable location",
+  "enable_location_desc": "Please enable location. The application won't work properly without it.",
+  "settings": "Settings",
+  "location_info_title": "Location Info",
+  "enable": "Enable",
+  "enable_permission": "Please enable location permissions and GPS. The application won't work properly without it."
 }

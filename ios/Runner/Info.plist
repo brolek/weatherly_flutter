@@ -46,5 +46,7 @@
         <string>en_US</string>
         <string>pl_PL</string>
     </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Need to access location to get weather for user</string>
 </dict>
 </plist>

@@ -31,6 +31,16 @@ class _$WeatherStateTearOff {
       message,
     );
   }
+
+// ignore: unused_element
+  _WeatherLocationDenied locationDenied() {
+    return const _WeatherLocationDenied();
+  }
+
+// ignore: unused_element
+  _WeatherEnableGps enableGps() {
+    return const _WeatherEnableGps();
+  }
 }
 
 /// @nodoc
@@ -44,12 +54,16 @@ mixin _$WeatherState {
     @required Result loading(),
     @required Result loaded(AllWeather weather),
     @required Result error(String message),
+    @required Result locationDenied(),
+    @required Result enableGps(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result loading(),
     Result loaded(AllWeather weather),
     Result error(String message),
+    Result locationDenied(),
+    Result enableGps(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -57,12 +71,16 @@ mixin _$WeatherState {
     @required Result loading(_WeatherLoading value),
     @required Result loaded(_WeatherLoaded value),
     @required Result error(_WeatherError value),
+    @required Result locationDenied(_WeatherLocationDenied value),
+    @required Result enableGps(_WeatherEnableGps value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result loading(_WeatherLoading value),
     Result loaded(_WeatherLoaded value),
     Result error(_WeatherError value),
+    Result locationDenied(_WeatherLocationDenied value),
+    Result enableGps(_WeatherEnableGps value),
     @required Result orElse(),
   });
 }
@@ -125,10 +143,14 @@ class _$_WeatherLoading implements _WeatherLoading {
     @required Result loading(),
     @required Result loaded(AllWeather weather),
     @required Result error(String message),
+    @required Result locationDenied(),
+    @required Result enableGps(),
   }) {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
     return loading();
   }
 
@@ -138,6 +160,8 @@ class _$_WeatherLoading implements _WeatherLoading {
     Result loading(),
     Result loaded(AllWeather weather),
     Result error(String message),
+    Result locationDenied(),
+    Result enableGps(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -153,10 +177,14 @@ class _$_WeatherLoading implements _WeatherLoading {
     @required Result loading(_WeatherLoading value),
     @required Result loaded(_WeatherLoaded value),
     @required Result error(_WeatherError value),
+    @required Result locationDenied(_WeatherLocationDenied value),
+    @required Result enableGps(_WeatherEnableGps value),
   }) {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
     return loading(this);
   }
 
@@ -166,6 +194,8 @@ class _$_WeatherLoading implements _WeatherLoading {
     Result loading(_WeatherLoading value),
     Result loaded(_WeatherLoaded value),
     Result error(_WeatherError value),
+    Result locationDenied(_WeatherLocationDenied value),
+    Result enableGps(_WeatherEnableGps value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -243,10 +273,14 @@ class _$_WeatherLoaded implements _WeatherLoaded {
     @required Result loading(),
     @required Result loaded(AllWeather weather),
     @required Result error(String message),
+    @required Result locationDenied(),
+    @required Result enableGps(),
   }) {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
     return loaded(weather);
   }
 
@@ -256,6 +290,8 @@ class _$_WeatherLoaded implements _WeatherLoaded {
     Result loading(),
     Result loaded(AllWeather weather),
     Result error(String message),
+    Result locationDenied(),
+    Result enableGps(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -271,10 +307,14 @@ class _$_WeatherLoaded implements _WeatherLoaded {
     @required Result loading(_WeatherLoading value),
     @required Result loaded(_WeatherLoaded value),
     @required Result error(_WeatherError value),
+    @required Result locationDenied(_WeatherLocationDenied value),
+    @required Result enableGps(_WeatherEnableGps value),
   }) {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
     return loaded(this);
   }
 
@@ -284,6 +324,8 @@ class _$_WeatherLoaded implements _WeatherLoaded {
     Result loading(_WeatherLoading value),
     Result loaded(_WeatherLoaded value),
     Result error(_WeatherError value),
+    Result locationDenied(_WeatherLocationDenied value),
+    Result enableGps(_WeatherEnableGps value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -363,10 +405,14 @@ class _$_WeatherError implements _WeatherError {
     @required Result loading(),
     @required Result loaded(AllWeather weather),
     @required Result error(String message),
+    @required Result locationDenied(),
+    @required Result enableGps(),
   }) {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
     return error(message);
   }
 
@@ -376,6 +422,8 @@ class _$_WeatherError implements _WeatherError {
     Result loading(),
     Result loaded(AllWeather weather),
     Result error(String message),
+    Result locationDenied(),
+    Result enableGps(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -391,10 +439,14 @@ class _$_WeatherError implements _WeatherError {
     @required Result loading(_WeatherLoading value),
     @required Result loaded(_WeatherLoaded value),
     @required Result error(_WeatherError value),
+    @required Result locationDenied(_WeatherLocationDenied value),
+    @required Result enableGps(_WeatherEnableGps value),
   }) {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
     return error(this);
   }
 
@@ -404,6 +456,8 @@ class _$_WeatherError implements _WeatherError {
     Result loading(_WeatherLoading value),
     Result loaded(_WeatherLoaded value),
     Result error(_WeatherError value),
+    Result locationDenied(_WeatherLocationDenied value),
+    Result enableGps(_WeatherEnableGps value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -419,4 +473,222 @@ abstract class _WeatherError implements WeatherState {
 
   String get message;
   _$WeatherErrorCopyWith<_WeatherError> get copyWith;
+}
+
+/// @nodoc
+abstract class _$WeatherLocationDeniedCopyWith<$Res> {
+  factory _$WeatherLocationDeniedCopyWith(_WeatherLocationDenied value,
+          $Res Function(_WeatherLocationDenied) then) =
+      __$WeatherLocationDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$WeatherLocationDeniedCopyWithImpl<$Res>
+    extends _$WeatherStateCopyWithImpl<$Res>
+    implements _$WeatherLocationDeniedCopyWith<$Res> {
+  __$WeatherLocationDeniedCopyWithImpl(_WeatherLocationDenied _value,
+      $Res Function(_WeatherLocationDenied) _then)
+      : super(_value, (v) => _then(v as _WeatherLocationDenied));
+
+  @override
+  _WeatherLocationDenied get _value => super._value as _WeatherLocationDenied;
+}
+
+/// @nodoc
+class _$_WeatherLocationDenied implements _WeatherLocationDenied {
+  const _$_WeatherLocationDenied();
+
+  @override
+  String toString() {
+    return 'WeatherState.locationDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _WeatherLocationDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result loaded(AllWeather weather),
+    @required Result error(String message),
+    @required Result locationDenied(),
+    @required Result enableGps(),
+  }) {
+    assert(loading != null);
+    assert(loaded != null);
+    assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
+    return locationDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result loaded(AllWeather weather),
+    Result error(String message),
+    Result locationDenied(),
+    Result enableGps(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (locationDenied != null) {
+      return locationDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(_WeatherLoading value),
+    @required Result loaded(_WeatherLoaded value),
+    @required Result error(_WeatherError value),
+    @required Result locationDenied(_WeatherLocationDenied value),
+    @required Result enableGps(_WeatherEnableGps value),
+  }) {
+    assert(loading != null);
+    assert(loaded != null);
+    assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
+    return locationDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(_WeatherLoading value),
+    Result loaded(_WeatherLoaded value),
+    Result error(_WeatherError value),
+    Result locationDenied(_WeatherLocationDenied value),
+    Result enableGps(_WeatherEnableGps value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (locationDenied != null) {
+      return locationDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WeatherLocationDenied implements WeatherState {
+  const factory _WeatherLocationDenied() = _$_WeatherLocationDenied;
+}
+
+/// @nodoc
+abstract class _$WeatherEnableGpsCopyWith<$Res> {
+  factory _$WeatherEnableGpsCopyWith(
+          _WeatherEnableGps value, $Res Function(_WeatherEnableGps) then) =
+      __$WeatherEnableGpsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$WeatherEnableGpsCopyWithImpl<$Res>
+    extends _$WeatherStateCopyWithImpl<$Res>
+    implements _$WeatherEnableGpsCopyWith<$Res> {
+  __$WeatherEnableGpsCopyWithImpl(
+      _WeatherEnableGps _value, $Res Function(_WeatherEnableGps) _then)
+      : super(_value, (v) => _then(v as _WeatherEnableGps));
+
+  @override
+  _WeatherEnableGps get _value => super._value as _WeatherEnableGps;
+}
+
+/// @nodoc
+class _$_WeatherEnableGps implements _WeatherEnableGps {
+  const _$_WeatherEnableGps();
+
+  @override
+  String toString() {
+    return 'WeatherState.enableGps()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _WeatherEnableGps);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result loading(),
+    @required Result loaded(AllWeather weather),
+    @required Result error(String message),
+    @required Result locationDenied(),
+    @required Result enableGps(),
+  }) {
+    assert(loading != null);
+    assert(loaded != null);
+    assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
+    return enableGps();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result loading(),
+    Result loaded(AllWeather weather),
+    Result error(String message),
+    Result locationDenied(),
+    Result enableGps(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (enableGps != null) {
+      return enableGps();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result loading(_WeatherLoading value),
+    @required Result loaded(_WeatherLoaded value),
+    @required Result error(_WeatherError value),
+    @required Result locationDenied(_WeatherLocationDenied value),
+    @required Result enableGps(_WeatherEnableGps value),
+  }) {
+    assert(loading != null);
+    assert(loaded != null);
+    assert(error != null);
+    assert(locationDenied != null);
+    assert(enableGps != null);
+    return enableGps(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result loading(_WeatherLoading value),
+    Result loaded(_WeatherLoaded value),
+    Result error(_WeatherError value),
+    Result locationDenied(_WeatherLocationDenied value),
+    Result enableGps(_WeatherEnableGps value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (enableGps != null) {
+      return enableGps(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WeatherEnableGps implements WeatherState {
+  const factory _WeatherEnableGps() = _$_WeatherEnableGps;
 }
