@@ -157,3 +157,9 @@ abstract class NetworkExceptions with _$NetworkExceptions {
     return errorMessage;
   }
 }
+
+extension ExtendNetworkException on NetworkExceptions {
+  String get message {
+    return NetworkExceptions.getErrorMessage(this);
+  }
+}
