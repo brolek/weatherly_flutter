@@ -118,6 +118,7 @@ abstract class NetworkExceptions with _$NetworkExceptions {
   }
 
   static String getErrorMessage(NetworkExceptions networkExceptions) {
+    // TODO add localizations string errors
     var errorMessage = "";
     networkExceptions.when(notImplemented: () {
       errorMessage = "Not Implemented";

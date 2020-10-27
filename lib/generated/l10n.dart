@@ -104,6 +104,26 @@ class S {
       args: [],
     );
   }
+
+  /// `An error occured`
+  String get error {
+    return Intl.message(
+      'An error occured',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get try_again {
+    return Intl.message(
+      'Try again',
+      name: 'try_again',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

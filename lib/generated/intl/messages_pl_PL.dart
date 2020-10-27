@@ -26,7 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enable_location" : MessageLookupByLibrary.simpleMessage("Włącz usługi GPS"),
     "enable_location_desc" : MessageLookupByLibrary.simpleMessage("Proszę włączyć usługi GPS. Bez nich aplikacja nie będzie działać poprawnie."),
     "enable_permission" : MessageLookupByLibrary.simpleMessage("Proszę pozwolić na dostęp do lokalizacji urządzenia oraz o włączenie usług GPS. Bez tego aplikacja nie będzie działać poprawnie."),
+    "error" : MessageLookupByLibrary.simpleMessage("Wystąpił błąd"),
     "location_info_title" : MessageLookupByLibrary.simpleMessage("Informacja o lokalizacji"),
-    "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia")
+    "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia"),
+    "try_again" : MessageLookupByLibrary.simpleMessage("Spróbuj ponownie")
   };
 }

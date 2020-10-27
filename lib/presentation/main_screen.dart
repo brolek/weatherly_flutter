@@ -70,13 +70,23 @@ class _MainScreenState extends State<MainScreen>
   }
 
   Widget _buildLocationDeniedInfo(String message) {
+    return _buildMessagePage(
+        S.of(context).location_info_title, message, S.of(context).enable);
+  }
+
+  Widget _buildError(String error) {
+    return _buildMessagePage(
+        S.of(context).error, error, S.of(context).try_again);
+  }
+
+  Widget _buildMessagePage(String title, String message, String buttonText) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(S.of(context).location_info_title,
+            Text(title,
                 textAlign: TextAlign.center,
                 style: TextStyle(color: kColorBlack, fontSize: 22)),
             Padding(
@@ -86,7 +96,7 @@ class _MainScreenState extends State<MainScreen>
             PlatformButton(
                 color: kColorPrimary,
                 child: Text(
-                  S.of(context).enable,
+                  buttonText,
                   style: TextStyle(color: kColorLightGrey),
                 ),
                 onPressed: () {
@@ -98,16 +108,9 @@ class _MainScreenState extends State<MainScreen>
     );
   }
 
-  Widget _buildError(String error) {
-    return Container(
-      child: Center(
-        child: Text(error),
-      ),
-    );
-  }
-
   Future _buildEnableGpsDialog() async {
-    await showPlatformDialog(barrierDismissible: false,
+    await showPlatformDialog(
+        barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
           return PlatformAlertDialog(

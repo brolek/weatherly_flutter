@@ -26,7 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enable_location" : MessageLookupByLibrary.simpleMessage("Enable location"),
     "enable_location_desc" : MessageLookupByLibrary.simpleMessage("Please enable location. The application won\'t work properly without it."),
     "enable_permission" : MessageLookupByLibrary.simpleMessage("Please enable location permissions and GPS. The application won\'t work properly without it."),
+    "error" : MessageLookupByLibrary.simpleMessage("An error occured"),
     "location_info_title" : MessageLookupByLibrary.simpleMessage("Location Info"),
-    "settings" : MessageLookupByLibrary.simpleMessage("Settings")
+    "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
+    "try_again" : MessageLookupByLibrary.simpleMessage("Try again")
   };
 }

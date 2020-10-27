@@ -6,5 +6,7 @@
   "settings": "Settings",
   "location_info_title": "Location Info",
   "enable": "Enable",
-  "enable_permission": "Please enable location permissions and GPS. The application won't work properly without it."
+  "enable_permission": "Please enable location permissions and GPS. The application won't work properly without it.",
+  "error": "An error occured",
+  "try_again": "Try again"
 }
