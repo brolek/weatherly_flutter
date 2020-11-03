@@ -38,22 +38,26 @@ class _MainScreenState extends State<MainScreen>
   Widget build(BuildContext context) {
     return PlatformScaffold(
       backgroundColor: kColorLightGrey,
-      body: BlocConsumer<WeatherCubit, WeatherState>(
-        listener: (BuildContext context, state) async {
-          if (state == WeatherState.enableGps()) {
-            await _buildEnableGpsDialog();
-          }
-        },
-        buildWhen: (previous, current) => current != WeatherState.enableGps(),
-        builder: (BuildContext context, state) {
-          return state.when(
-              loading: _buildLoader,
-              loaded: (AllWeather data) => _buildMainPage(data),
-              error: (String error) => _buildError(error),
-              locationDenied: () =>
-                  _buildLocationDeniedInfo(S.of(context).enable_permission),
-              enableGps: () => Container());
-        },
+      body: SafeArea(
+        bottom: true,
+        top: true,
+        child: BlocConsumer<WeatherCubit, WeatherState>(
+          listener: (BuildContext context, state) async {
+            if (state == WeatherState.enableGps()) {
+              await _buildEnableGpsDialog();
+            }
+          },
+          buildWhen: (previous, current) => current != WeatherState.enableGps(),
+          builder: (BuildContext context, state) {
+            return state.when(
+                loading: _buildLoader,
+                loaded: (AllWeather data) => _buildMainPage(data),
+                error: (String error) => _buildError(error),
+                locationDenied: () =>
+                    _buildLocationDeniedInfo(S.of(context).enable_permission),
+                enableGps: () => Container());
+          },
+        ),
       ),
     );
   }
