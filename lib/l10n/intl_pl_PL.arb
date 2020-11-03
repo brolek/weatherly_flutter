@@ -8,5 +8,6 @@
   "enable": "Włącz",
   "enable_permission": "Proszę pozwolić na dostęp do lokalizacji urządzenia oraz o włączenie usług GPS. Bez tego aplikacja nie będzie działać poprawnie.",
   "error": "Wystąpił błąd",
-  "try_again": "Spróbuj ponownie"
+  "try_again": "Spróbuj ponownie",
+  "hello": "Witaj!"
 }

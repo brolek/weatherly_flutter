@@ -6,6 +6,7 @@ import 'package:weatherly_flutter/data/model/all_weather.dart';
 import 'package:weatherly_flutter/domain/weather/weather_cubit.dart';
 import 'package:weatherly_flutter/domain/weather/weather_state.dart';
 import 'package:weatherly_flutter/generated/l10n.dart';
+import 'package:weatherly_flutter/presentation/widgets/main/main_container.dart';
 import 'package:weatherly_flutter/utils/app_colors.dart';
 
 class MainScreen extends StatefulWidget {
@@ -47,7 +48,7 @@ class _MainScreenState extends State<MainScreen>
         builder: (BuildContext context, state) {
           return state.when(
               loading: _buildLoader,
-              loaded: (AllWeather data) => Container(),
+              loaded: (AllWeather data) => _buildMainPage(data),
               error: (String error) => _buildError(error),
               locationDenied: () =>
                   _buildLocationDeniedInfo(S.of(context).enable_permission),
@@ -67,6 +68,10 @@ class _MainScreenState extends State<MainScreen>
     return Container(
       child: Center(child: PlatformCircularProgressIndicator()),
     );
+  }
+
+  Widget _buildMainPage(AllWeather data) {
+    return MainContainer(data: data);
   }
 
   Widget _buildLocationDeniedInfo(String message) {

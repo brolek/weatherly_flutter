@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:weatherly_flutter/data/service/api_repository.dart';
+import 'package:weatherly_flutter/data/service/network_exceptions.dart';
 import 'package:weatherly_flutter/domain/weather/weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
@@ -44,6 +45,9 @@ class WeatherCubit extends Cubit<WeatherState> {
   Future _getUserLocation() async {
     var location = await Geolocator.getCurrentPosition();
     debugPrint(location.toString());
-    // TODO implement getting data
+    _repository.fetchAllWeather(location.latitude, location.longitude).then(
+        (value) => value.when(
+            success: (data) => emit(WeatherState.loaded(data)),
+            failure: (error) => emit(WeatherState.error(error.message))));
   }
 }
