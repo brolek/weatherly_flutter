@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:weatherly_flutter/data/service/api_repository.dart';
@@ -8,6 +9,7 @@ import 'package:weatherly_flutter/domain/weather/weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
   final ApiRepository _repository;
+  String cityName = "";
 
   WeatherCubit(this._repository) : super(WeatherState.loading());
 
@@ -43,11 +45,18 @@ class WeatherCubit extends Cubit<WeatherState> {
   }
 
   Future _getUserLocation() async {
-    var location = await Geolocator.getCurrentPosition();
-    debugPrint(location.toString());
+    var location = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.best);
+    _getCityName(location);
     _repository.fetchAllWeather(location.latitude, location.longitude).then(
         (value) => value.when(
             success: (data) => emit(WeatherState.loaded(data)),
             failure: (error) => emit(WeatherState.error(error.message))));
+  }
+
+  Future _getCityName(Position location) async {
+    List<Placemark> placemarks =
+        await placemarkFromCoordinates(location.latitude, location.longitude);
+    this.cityName = placemarks.first.locality;
   }
 }
