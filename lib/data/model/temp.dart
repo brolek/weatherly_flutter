@@ -1,12 +1,12 @@
 
 class Temp {
 
-  final double day;
-  final double min;
-  final double max;
-  final double night;
-  final double eve;
-  final double morn;
+  final num day;
+  final num min;
+  final num max;
+  final num night;
+  final num eve;
+  final num morn;
 
 	Temp.fromJsonMap(Map<String, dynamic> map): 
 		day = map["day"],
