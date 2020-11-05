@@ -19,14 +19,20 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pl_PL';
 
+  static m0(clouds) => "Zachmurzenie: ${clouds}%";
+
+  static m1(feels_like) => "Temp. odczuwalna: ${feels_like}°";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "app_name" : MessageLookupByLibrary.simpleMessage("Weatherly"),
+    "clouds" : m0,
     "enable" : MessageLookupByLibrary.simpleMessage("Włącz"),
     "enable_location" : MessageLookupByLibrary.simpleMessage("Włącz usługi GPS"),
     "enable_location_desc" : MessageLookupByLibrary.simpleMessage("Proszę włączyć usługi GPS. Bez nich aplikacja nie będzie działać poprawnie."),
     "enable_permission" : MessageLookupByLibrary.simpleMessage("Proszę pozwolić na dostęp do lokalizacji urządzenia oraz o włączenie usług GPS. Bez tego aplikacja nie będzie działać poprawnie."),
     "error" : MessageLookupByLibrary.simpleMessage("Wystąpił błąd"),
+    "feels_like" : m1,
     "hello" : MessageLookupByLibrary.simpleMessage("Witaj!"),
     "location_info_title" : MessageLookupByLibrary.simpleMessage("Informacja o lokalizacji"),
     "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia"),

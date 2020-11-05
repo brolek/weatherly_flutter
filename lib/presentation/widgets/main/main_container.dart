@@ -6,6 +6,7 @@ import 'package:weatherly_flutter/data/model/all_weather.dart';
 import 'package:weatherly_flutter/domain/weather/weather_cubit.dart';
 import 'package:weatherly_flutter/domain/weather/weather_state.dart';
 import 'package:weatherly_flutter/generated/l10n.dart';
+import 'package:weatherly_flutter/presentation/widgets/main/card_main.dart';
 import 'package:weatherly_flutter/utils/app_colors.dart';
 
 class MainContainer extends StatefulWidget {
@@ -31,7 +32,9 @@ class _MainContainerState extends State<MainContainer> {
                 Text(S.of(context).hello,
                     style: TextStyle(color: kColorBlack, fontSize: 32)),
                 SizedBox(height: 8),
-                _buildLocationRow(context)
+                _buildLocationRow(context),
+                SizedBox(height: 14),
+                CardMain(data: widget.data)
               ],
             );
           },

@@ -134,6 +134,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Cloud cover: {clouds}%`
+  String clouds(Object clouds) {
+    return Intl.message(
+      'Cloud cover: $clouds%',
+      name: 'clouds',
+      desc: '',
+      args: [clouds],
+    );
+  }
+
+  /// `Feels like: {feels_like}°`
+  String feels_like(Object feels_like) {
+    return Intl.message(
+      'Feels like: $feels_like°',
+      name: 'feels_like',
+      desc: '',
+      args: [feels_like],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

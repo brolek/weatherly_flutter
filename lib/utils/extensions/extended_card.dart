@@ -7,7 +7,9 @@ extension ExtendedCard on Widget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16))),
       color: backgroundColor,
-      child: Container(padding: EdgeInsets.all(12), child: this),
+      child: Container(
+          padding: EdgeInsets.only(left: 18, bottom: 18, top: 12, right: 12),
+          child: this),
     );
   }
 }

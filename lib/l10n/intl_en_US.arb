@@ -9,5 +9,7 @@
   "enable_permission": "Please enable location permissions and GPS. The application won't work properly without it.",
   "error": "An error occured",
   "try_again": "Try again",
-  "hello": "Hello!"
+  "hello": "Hello!",
+  "clouds": "Cloud cover: {clouds}%",
+  "feels_like": "Feels like: {feels_like}°"
 }
