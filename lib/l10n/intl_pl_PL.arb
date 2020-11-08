@@ -11,5 +11,11 @@
   "try_again": "Spróbuj ponownie",
   "hello": "Witaj!",
   "clouds": "Zachmurzenie: {clouds}%",
-  "feels_like": "Temp. odczuwalna: {feels_like}°"
+  "feels_like": "Temp. odczuwalna: {feels_like}°",
+  "wind": "Wiatr",
+  "wind_value": "{wind}m/s",
+  "humidity": "Wilgotność",
+  "humidity_value": "{humidity}%",
+  "pressure": "Ciśnienie",
+  "pressure_value": "{pressure}hPa"
 }

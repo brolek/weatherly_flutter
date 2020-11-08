@@ -23,6 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(feels_like) => "Temp. odczuwalna: ${feels_like}°";
 
+  static m2(humidity) => "${humidity}%";
+
+  static m3(pressure) => "${pressure}hPa";
+
+  static m4(wind) => "${wind}m/s";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "app_name" : MessageLookupByLibrary.simpleMessage("Weatherly"),
@@ -34,8 +40,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "error" : MessageLookupByLibrary.simpleMessage("Wystąpił błąd"),
     "feels_like" : m1,
     "hello" : MessageLookupByLibrary.simpleMessage("Witaj!"),
+    "humidity" : MessageLookupByLibrary.simpleMessage("Wilgotność"),
+    "humidity_value" : m2,
     "location_info_title" : MessageLookupByLibrary.simpleMessage("Informacja o lokalizacji"),
+    "pressure" : MessageLookupByLibrary.simpleMessage("Ciśnienie"),
+    "pressure_value" : m3,
     "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia"),
-    "try_again" : MessageLookupByLibrary.simpleMessage("Spróbuj ponownie")
+    "try_again" : MessageLookupByLibrary.simpleMessage("Spróbuj ponownie"),
+    "wind" : MessageLookupByLibrary.simpleMessage("Wiatr"),
+    "wind_value" : m4
   };
 }

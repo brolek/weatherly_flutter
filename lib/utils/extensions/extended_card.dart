@@ -8,7 +8,7 @@ extension ExtendedCard on Widget {
           borderRadius: BorderRadius.all(Radius.circular(16))),
       color: backgroundColor,
       child: Container(
-          padding: EdgeInsets.only(left: 18, bottom: 18, top: 12, right: 12),
+          padding: EdgeInsets.all(18),
           child: this),
     );
   }

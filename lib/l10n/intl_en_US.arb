@@ -11,5 +11,11 @@
   "try_again": "Try again",
   "hello": "Hello!",
   "clouds": "Cloud cover: {clouds}%",
-  "feels_like": "Feels like: {feels_like}°"
+  "feels_like": "Feels like: {feels_like}°",
+  "wind": "Wind",
+  "wind_value": "{wind}m/s",
+  "humidity": "Humidity",
+  "humidity_value": "{humidity}%",
+  "pressure": "Pressure",
+  "pressure_value": "{pressure}hPa"
 }

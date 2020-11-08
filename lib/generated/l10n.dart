@@ -154,6 +154,66 @@ class S {
       args: [feels_like],
     );
   }
+
+  /// `Wind`
+  String get wind {
+    return Intl.message(
+      'Wind',
+      name: 'wind',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{wind}m/s`
+  String wind_value(Object wind) {
+    return Intl.message(
+      '${wind}m/s',
+      name: 'wind_value',
+      desc: '',
+      args: [wind],
+    );
+  }
+
+  /// `Humidity`
+  String get humidity {
+    return Intl.message(
+      'Humidity',
+      name: 'humidity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{humidity}%`
+  String humidity_value(Object humidity) {
+    return Intl.message(
+      '$humidity%',
+      name: 'humidity_value',
+      desc: '',
+      args: [humidity],
+    );
+  }
+
+  /// `Pressure`
+  String get pressure {
+    return Intl.message(
+      'Pressure',
+      name: 'pressure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{pressure}hPa`
+  String pressure_value(Object pressure) {
+    return Intl.message(
+      '${pressure}hPa',
+      name: 'pressure_value',
+      desc: '',
+      args: [pressure],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
