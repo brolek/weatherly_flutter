@@ -17,5 +17,7 @@
   "humidity": "Wilgotność",
   "humidity_value": "{humidity}%",
   "pressure": "Ciśnienie",
-  "pressure_value": "{pressure}hPa"
+  "pressure_value": "{pressure}hPa",
+  "sunrise": "Wschód słońca",
+  "sunset": "Zachód słońca"
 }

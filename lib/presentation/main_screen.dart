@@ -37,7 +37,7 @@ class _MainScreenState extends State<MainScreen>
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
-      backgroundColor: kColorLightGrey,
+      backgroundColor: kColorWhite,
       body: SafeArea(
         bottom: true,
         top: true,

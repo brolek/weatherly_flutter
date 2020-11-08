@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "pressure" : MessageLookupByLibrary.simpleMessage("Ciśnienie"),
     "pressure_value" : m3,
     "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia"),
+    "sunrise" : MessageLookupByLibrary.simpleMessage("Wschód słońca"),
+    "sunset" : MessageLookupByLibrary.simpleMessage("Zachód słońca"),
     "try_again" : MessageLookupByLibrary.simpleMessage("Spróbuj ponownie"),
     "wind" : MessageLookupByLibrary.simpleMessage("Wiatr"),
     "wind_value" : m4

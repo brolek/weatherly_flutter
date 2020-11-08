@@ -214,6 +214,26 @@ class S {
       args: [pressure],
     );
   }
+
+  /// `Sunrise`
+  String get sunrise {
+    return Intl.message(
+      'Sunrise',
+      name: 'sunrise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sunset`
+  String get sunset {
+    return Intl.message(
+      'Sunset',
+      name: 'sunset',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
