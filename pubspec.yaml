@@ -38,6 +38,7 @@ dependencies:
   geolocator: ^6.1.1
   permission_handler: ^5.0.1+1
   geocoding: ^1.0.5
+  mp_chart: ^0.3.0
 
 
 

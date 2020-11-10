@@ -6,6 +6,7 @@ import 'package:weatherly_flutter/data/model/all_weather.dart';
 import 'package:weatherly_flutter/domain/weather/weather_cubit.dart';
 import 'package:weatherly_flutter/domain/weather/weather_state.dart';
 import 'package:weatherly_flutter/generated/l10n.dart';
+import 'package:weatherly_flutter/presentation/widgets/main/card_chart.dart';
 import 'package:weatherly_flutter/presentation/widgets/main/card_main.dart';
 import 'package:weatherly_flutter/presentation/widgets/main/card_secondary.dart';
 import 'package:weatherly_flutter/presentation/widgets/main/card_sun_info.dart';
@@ -27,21 +28,25 @@ class _MainContainerState extends State<MainContainer> {
         padding: EdgeInsets.all(20),
         child: BlocBuilder<WeatherCubit, WeatherState>(
           builder: (BuildContext context, state) {
-            return Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(S.of(context).hello,
-                    style: TextStyle(color: kColorBlack, fontSize: 32)),
-                SizedBox(height: 8),
-                _buildLocationRow(context),
-                SizedBox(height: 14),
-                CardMain(data: widget.data),
-                SizedBox(height: 12),
-                CardSecondary(data: widget.data),
-                SizedBox(height: 12),
-                CardSunInfo(data: widget.data)
-              ],
+            return SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(S.of(context).hello,
+                      style: TextStyle(color: kColorBlack, fontSize: 32)),
+                  SizedBox(height: 8),
+                  _buildLocationRow(context),
+                  SizedBox(height: 14),
+                  CardMain(data: widget.data),
+                  SizedBox(height: 12),
+                  CardSecondary(data: widget.data),
+                  SizedBox(height: 12),
+                  CardSunInfo(data: widget.data),
+                  SizedBox(height: 12),
+                  CardChart(data: widget.data.hourly)
+                ],
+              ),
             );
           },
         ));
