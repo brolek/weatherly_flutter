@@ -25,14 +25,16 @@ class _MainContainerState extends State<MainContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: BlocBuilder<WeatherCubit, WeatherState>(
           builder: (BuildContext context, state) {
             return SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 20),
                   Text(S.of(context).hello,
                       style: TextStyle(color: kColorBlack, fontSize: 32)),
                   SizedBox(height: 8),
@@ -44,7 +46,8 @@ class _MainContainerState extends State<MainContainer> {
                   SizedBox(height: 12),
                   CardSunInfo(data: widget.data),
                   SizedBox(height: 12),
-                  CardChart(data: widget.data.hourly)
+                  CardChart(data: widget.data.hourly),
+                  SizedBox(height: 20)
                 ],
               ),
             );

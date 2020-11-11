@@ -70,7 +70,10 @@ class _MainScreenState extends State<MainScreen>
 
   Widget _buildLoader() {
     return Container(
-      child: Center(child: PlatformCircularProgressIndicator()),
+      child: Center(
+          child: PlatformCircularProgressIndicator(
+              material: (_, __) => MaterialProgressIndicatorData(
+                  valueColor: AlwaysStoppedAnimation<Color>(kColorPrimary)))),
     );
   }
 
