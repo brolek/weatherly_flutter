@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:weatherly_flutter/generated/l10n.dart';
 
 part 'network_exceptions.freezed.dart';
 
@@ -117,50 +119,50 @@ abstract class NetworkExceptions with _$NetworkExceptions {
     }
   }
 
-  static String getErrorMessage(NetworkExceptions networkExceptions) {
-    // TODO add localizations string errors
+  static String getErrorMessage(NetworkExceptions networkExceptions, BuildContext context) {
+    String errorValue = S.of(context).error;
     var errorMessage = "";
     networkExceptions.when(notImplemented: () {
-      errorMessage = "Not Implemented";
+      errorMessage = errorValue;
     }, requestCancelled: () {
-      errorMessage = "Request Cancelled";
+      errorMessage = errorValue;
     }, internalServerError: () {
-      errorMessage = "Internal Server Error";
+      errorMessage = errorValue;
     }, notFound: (String reason) {
-      errorMessage = reason;
+      errorMessage = errorValue;
     }, serviceUnavailable: () {
-      errorMessage = "Service unavailable";
+      errorMessage = errorValue;
     }, methodNotAllowed: () {
-      errorMessage = "Method Allowed";
+      errorMessage = errorValue;
     }, badRequest: () {
-      errorMessage = "Bad request";
+      errorMessage = errorValue;
     }, unauthorisedRequest: () {
-      errorMessage = "Unauthorised request";
+      errorMessage = errorValue;
     }, unexpectedError: () {
-      errorMessage = "Unexpected error occurred";
+      errorMessage = errorValue;
     }, requestTimeout: () {
-      errorMessage = "Connection request timeout";
+      errorMessage = errorValue;
     }, noInternetConnection: () {
-      errorMessage = "No internet connection";
+      errorMessage = S.of(context).no_internet_connection;
     }, conflict: () {
-      errorMessage = "Error due to a conflict";
+      errorMessage = errorValue;
     }, sendTimeout: () {
-      errorMessage = "Send timeout in connection with API server";
+      errorMessage = errorValue;
     }, unableToProcess: () {
-      errorMessage = "Unable to process the data";
+      errorMessage = errorValue;
     }, defaultError: (String error) {
       errorMessage = error;
     }, formatException: () {
-      errorMessage = "Unexpected error occurred";
+      errorMessage = errorValue;
     }, notAcceptable: () {
-      errorMessage = "Not acceptable";
+      errorMessage = errorValue;
     });
     return errorMessage;
   }
 }
 
 extension ExtendNetworkException on NetworkExceptions {
-  String get message {
-    return NetworkExceptions.getErrorMessage(this);
+  String getMessage(BuildContext context) {
+    return NetworkExceptions.getErrorMessage(this, context);
   }
 }

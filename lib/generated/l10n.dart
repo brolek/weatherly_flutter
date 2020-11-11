@@ -105,10 +105,10 @@ class S {
     );
   }
 
-  /// `An error occured`
+  /// `An error occurred`
   String get error {
     return Intl.message(
-      'An error occured',
+      'An error occurred',
       name: 'error',
       desc: '',
       args: [],
@@ -230,6 +230,16 @@ class S {
     return Intl.message(
       'Sunset',
       name: 'sunset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection`
+  String get no_internet_connection {
+    return Intl.message(
+      'No internet connection',
+      name: 'no_internet_connection',
       desc: '',
       args: [],
     );

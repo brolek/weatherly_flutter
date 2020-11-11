@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -56,7 +55,8 @@ class WeatherCubit extends Cubit<WeatherState> {
             Localizations.localeOf(_context).languageCode)
         .then((value) => value.when(
             success: (data) => emit(WeatherState.loaded(data)),
-            failure: (error) => emit(WeatherState.error(error.message))));
+            failure: (error) =>
+                emit(WeatherState.error(error.getMessage(_context)))));
   }
 
   Future _getCityName(Position location) async {

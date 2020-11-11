@@ -7,7 +7,7 @@
   "location_info_title": "Location Info",
   "enable": "Enable",
   "enable_permission": "Please enable location permissions and GPS. The application won't work properly without it.",
-  "error": "An error occured",
+  "error": "An error occurred",
   "try_again": "Try again",
   "hello": "Hello!",
   "clouds": "Cloud cover: {clouds}%",
@@ -19,5 +19,6 @@
   "pressure": "Pressure",
   "pressure_value": "{pressure}hPa",
   "sunrise": "Sunrise",
-  "sunset": "Sunset"
+  "sunset": "Sunset",
+  "no_internet_connection": "No internet connection"
 }

@@ -19,5 +19,6 @@
   "pressure": "Ciśnienie",
   "pressure_value": "{pressure}hPa",
   "sunrise": "Wschód słońca",
-  "sunset": "Zachód słońca"
+  "sunset": "Zachód słońca",
+  "no_internet_connection": "Brak połączenia z internetem"
 }

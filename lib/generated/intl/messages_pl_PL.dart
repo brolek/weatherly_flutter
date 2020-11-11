@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "humidity" : MessageLookupByLibrary.simpleMessage("Wilgotność"),
     "humidity_value" : m2,
     "location_info_title" : MessageLookupByLibrary.simpleMessage("Informacja o lokalizacji"),
+    "no_internet_connection" : MessageLookupByLibrary.simpleMessage("Brak połączenia z internetem"),
     "pressure" : MessageLookupByLibrary.simpleMessage("Ciśnienie"),
     "pressure_value" : m3,
     "settings" : MessageLookupByLibrary.simpleMessage("Ustawienia"),
