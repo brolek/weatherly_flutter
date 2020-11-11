@@ -1,16 +1,35 @@
-# weatherly_flutter
 
-Flutter app showing the current weather for user location.
+# Weatherly Flutter
 
-## Getting Started
+Simple application for Android and iOS showing the current weather for user location. Provided with two languages (polish and english) changing dynamically with the phone's language.
 
-This project is a starting point for a Flutter application.
+## Description
 
-A few resources to get you started if this is your first Flutter project:
+Weatherly uses data from [OpenWeatherAPI](https://openweathermap.org/api).
+It shows such info as:
+* current temperature with weather description and cloudiness,
+* humidity, pressure and wind speed,
+* sunrise and sunset hours,
+* graph with the hourly temperature for the following 2 days.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Tech stack
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Flutter - no need for explanation,
+* Dio - HTTP client for getting data,
+* Bloc/Cubit - state management library helping seperating business logic from presentation,
+* Freezed - package for easy generating unions, data classes,
+* Intl - text localizations with different languages,
+* Geolocator/Geocoding - packages providing easy access to platform specific location services,
+* Permission Handler - handling permissions with cross-platform API,
+* Flutter Platform Widgets - providing platform specific widgets,
+* Mp Chart - displaying hourly weather info.
+
+## App Demo
+
+### Android
+
+<img src="demo/android_demo.gif" width="300" />
+
+### iOS
+
+<img src="demo/ios_demo.gif" width="300" />
