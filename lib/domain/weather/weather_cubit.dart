@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -10,10 +11,12 @@ import 'package:weatherly_flutter/domain/weather/weather_state.dart';
 class WeatherCubit extends Cubit<WeatherState> {
   final ApiRepository _repository;
   String cityName = "";
+  BuildContext _context;
 
   WeatherCubit(this._repository) : super(WeatherState.loading());
 
-  Future<void> requestData() async {
+  Future<void> requestData(BuildContext context) async {
+    _context = context;
     emit(WeatherState.loading());
     if (await _requestLocationPermission()) {
       checkGps();
@@ -48,8 +51,10 @@ class WeatherCubit extends Cubit<WeatherState> {
     var location = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.best);
     _getCityName(location);
-    _repository.fetchAllWeather(location.latitude, location.longitude).then(
-        (value) => value.when(
+    _repository
+        .fetchAllWeather(location.latitude, location.longitude,
+            Localizations.localeOf(_context).languageCode)
+        .then((value) => value.when(
             success: (data) => emit(WeatherState.loaded(data)),
             failure: (error) => emit(WeatherState.error(error.message))));
   }

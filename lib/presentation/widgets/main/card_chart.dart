@@ -88,7 +88,7 @@ class _CardChartState extends State<CardChart> {
       ..setLineWidth(1.5)
       ..setDrawCircleHole(false)
       ..setDrawCircles(false)
-      ..setValueTextSize(9)
+      ..setValueTextSize(14)
       ..setValueFormatter(LineValueFormatter())
       ..setDrawFilled(true)
       ..setHighlightEnabled(false)

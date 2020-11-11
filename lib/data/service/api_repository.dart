@@ -12,15 +12,15 @@ class ApiRepository {
     _apiClient = ApiClient(kBaseUrl);
   }
 
-  Future<ApiResult<AllWeather>> fetchAllWeather(double lat, double long) async {
+  Future<ApiResult<AllWeather>> fetchAllWeather(
+      double lat, double long, String language) async {
     try {
-      // TODO get language from app locale
       Map<String, dynamic> queryParams = {
         "lat": lat,
         "lon": long,
         "appid": kWeatherKey,
         "units": "metric",
-        "lang": "pl"
+        "lang": language
       };
       final response =
           await _apiClient.get("onecall", queryParameters: queryParams);

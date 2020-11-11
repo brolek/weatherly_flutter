@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen>
   @override
   void afterFirstLayout(BuildContext context) {
     WidgetsBinding.instance.addObserver(this);
-    context.bloc<WeatherCubit>().requestData();
+    context.bloc<WeatherCubit>().requestData(context);
   }
 
   @override
@@ -29,7 +29,7 @@ class _MainScreenState extends State<MainScreen>
     debugPrint(state.toString());
     if (state == AppLifecycleState.resumed &&
         previousState == AppLifecycleState.paused) {
-      context.bloc<WeatherCubit>().requestData();
+      context.bloc<WeatherCubit>().requestData(context);
     }
     previousState = state;
   }
@@ -109,7 +109,7 @@ class _MainScreenState extends State<MainScreen>
                   style: TextStyle(color: kColorLightGrey),
                 ),
                 onPressed: () {
-                  context.bloc<WeatherCubit>().requestData();
+                  context.bloc<WeatherCubit>().requestData(context);
                 })
           ],
         ),
